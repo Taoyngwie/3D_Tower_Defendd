@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5485027205823247809}
   - component: {fileID: 5485027205823247814}
   - component: {fileID: 5485027205823247815}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5485027206382919323}
   - component: {fileID: 5485027206382919300}
   - component: {fileID: 5485027206382919322}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cannonball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 5485027206382919322}
   moveSpeed: 10
+  damageAmount: 5
   impactEffect: {fileID: 780236637666849137, guid: e491753c15d72a24d9466c1e9452911d, type: 3}
 --- !u!135 &5485027206382919300
 SphereCollider:
