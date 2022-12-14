@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
+  speedMod: 0.5
   timeBweenAttacks: 0.5
   damagePerAttack: 1
 --- !u!136 &6287376406592576729

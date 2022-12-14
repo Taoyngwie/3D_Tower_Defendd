@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
 
     private SimpleEnemySpawner enemySpawaner;
 
+    public string nextLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class LevelManager : MonoBehaviour
                 levelActive = false;
                 levelVictory = false;
 
-                UIController.instance.levelFailScreen.SetActive(true);
+              
                 UIController.instance.towerButtons.SetActive(false);
             }
 
@@ -48,8 +50,15 @@ public class LevelManager : MonoBehaviour
                 levelActive = false;
                 levelVictory = true;
 
-                UIController.instance.levelComplete.SetActive(true);
+
                 UIController.instance.towerButtons.SetActive(false);
+            }
+
+            if (!levelActive)
+            {
+                UIController.instance.levelFailScreen.SetActive(!levelVictory);
+                UIController.instance.levelCompleteScreen.SetActive(levelVictory);
+
             }
         }
     }
