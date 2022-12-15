@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2255155887100424302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 1.02}
+  m_LocalPosition: {x: 0, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4582526333121901519}
@@ -4954,7 +4954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3763433107325429042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.364, z: 1.01}
+  m_LocalPosition: {x: 0, y: 1.364, z: 0}
   m_LocalScale: {x: 0.64, y: 0.64, z: 0.64}
   m_Children:
   - {fileID: 8521712007113205802}
@@ -5225,7 +5225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7415791449005522159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8292787115864875621}
@@ -5401,7 +5401,7 @@ MonoBehaviour:
   checkTime: 0.2
   enemiesUpdated: 0
   rangeModel: {fileID: 2255155887100424302}
-  cost: 150
+  cost: 200
 --- !u!136 &7653830370431077795
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5415,7 +5415,7 @@ CapsuleCollider:
   m_Radius: 0.7854712
   m_Height: 1.9509983
   m_Direction: 1
-  m_Center: {x: 0, y: 0.37740374, z: 1}
+  m_Center: {x: 0, y: 0.37740374, z: 0}
 --- !u!114 &7650286294052402273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5428,7 +5428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cedfa2ec7ed0b044887b0efae7fd1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenBombs: 0
+  timeBetweenBombs: 2.5
+  theBomb: {fileID: 2979979099895890391, guid: 226355ee282e2ea4692c3dfb670c8ef6, type: 3}
+  spwanPoint: {fileID: 4571636118954704776}
 --- !u!1 &7696408276505324314
 GameObject:
   m_ObjectHideFlags: 0

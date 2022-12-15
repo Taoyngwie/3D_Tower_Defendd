@@ -194,6 +194,7 @@ MonoBehaviour:
   checkTime: 0.2
   enemiesUpdated: 0
   rangeModel: {fileID: 4090436885982473019}
+  cost: 100
 --- !u!114 &5594750713649164082
 MonoBehaviour:
   m_ObjectHideFlags: 0

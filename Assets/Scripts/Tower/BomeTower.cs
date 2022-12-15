@@ -8,6 +8,12 @@ public class BomeTower : MonoBehaviour
 
     public float timeBetweenBombs;
     private float bombCounter;
+
+    public Bomb theBomb;
+
+    public Transform spwanPoint;
+
+    private Transform target;
     
     // Start is called before the first frame update
     void Start()
@@ -16,13 +22,38 @@ public class BomeTower : MonoBehaviour
         theTower = GetComponent<Tower>();
 
         bombCounter = timeBetweenBombs;
-
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        bombCounter -= Time.deltaTime;
+
+        if(theTower.enemiesInRange.Count > 0)
+        {
+            if(bombCounter <= 0)
+            {
+                float minDistance = theTower.range + 1f;
+
+                foreach (EnemyController enemy in theTower.enemiesInRange)
+                {
+                    if (enemy != null)
+                    {
+                        float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                        if (distance < minDistance)
+                        {
+                            minDistance = distance;
+                            target = enemy.transform;
+                        }
+                    }
+                }
+
+                bombCounter = timeBetweenBombs;
+
+                Bomb newBomb = Instantiate(theBomb, spwanPoint.position, Quaternion.identity);
+                newBomb.targetPoint = target.position;
+            }
+        }
     }
 }
