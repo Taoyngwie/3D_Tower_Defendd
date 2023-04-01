@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 2158409819816700993}
   - component: {fileID: 2158409819816700994}
   - component: {fileID: 2155164535421392262}
+  - component: {fileID: -6166193182674394381}
   m_Layer: 8
   m_Name: Triple Shot Tower
   m_TagString: Untagged
@@ -333,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  fireRate: 0
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 64
@@ -341,6 +343,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 7535820454425765963}
   cost: 250
+  upgrader: {fileID: 0}
 --- !u!114 &2158409819816700994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5201139524483563944, guid: 90a987a78c289134098c11b13203c2e4, type: 3}
   firePoint: {fileID: 2158409820056837596}
-  timeBetweenShots: 1.5
   launcherModel: {fileID: 2158409819456583468}
   shotEffect: {fileID: 780236637666849137, guid: e491753c15d72a24d9466c1e9452911d, type: 3}
 --- !u!136 &2155164535421392262
@@ -372,6 +374,37 @@ CapsuleCollider:
   m_Height: 1.9509983
   m_Direction: 1
   m_Center: {x: -0.00047421455, y: 0.37740374, z: 0}
+--- !u!114 &-6166193182674394381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158409819816700999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb5f67c7a299d4eaa97fb2a278204d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangeUpgrade:
+  - amount: 3.5
+    cost: 50
+  - amount: 4
+    cost: 100
+  - amount: 4.5
+    cost: 150
+  currentRangeUpgrade: 0
+  hasRangeUpgrade: 1
+  firerateUpgrades:
+  - amount: 1.3
+    cost: 100
+  - amount: 1.15
+    cost: 200
+  - amount: 1
+    cost: 300
+  currentFireRateUpgrade: 0
+  hasFirerateUpgrade: 1
+  fireRateText: Upgrade Fire Rate
 --- !u!1 &2158409820056837587
 GameObject:
   m_ObjectHideFlags: 0

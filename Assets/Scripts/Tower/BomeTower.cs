@@ -6,7 +6,7 @@ public class BomeTower : MonoBehaviour
 {
     private Tower theTower;
 
-    public float timeBetweenBombs;
+    //public float timeBetweenBombs;
     private float bombCounter;
 
     public Bomb theBomb;
@@ -21,7 +21,7 @@ public class BomeTower : MonoBehaviour
 
         theTower = GetComponent<Tower>();
 
-        bombCounter = timeBetweenBombs;
+        bombCounter = theTower.fireRate;
         
     }
 
@@ -49,7 +49,7 @@ public class BomeTower : MonoBehaviour
                     }
                 }
 
-                bombCounter = timeBetweenBombs;
+                bombCounter = theTower.fireRate;
 
                 Bomb newBomb = Instantiate(theBomb, spwanPoint.position, Quaternion.identity);
                 newBomb.targetPoint = target.position;

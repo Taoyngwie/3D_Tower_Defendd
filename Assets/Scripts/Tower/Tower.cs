@@ -6,6 +6,7 @@ public class Tower : MonoBehaviour
 {
 
     public float range = 3f;
+    public float fireRate;
 
     //ให้เห็นแค่ layer enemy
     public LayerMask whatIsEnemy;
@@ -23,11 +24,16 @@ public class Tower : MonoBehaviour
 
     public int cost = 100;
 
+    [HideInInspector]
+    public TowerUpgradeController upgrader;
+
 
     // Start is called before the first frame update
     void Start()
     {
         checkCounter = checkTime;
+
+        upgrader = GetComponent<TowerUpgradeController>();
     }
 
     // Update is called once per frame
@@ -49,6 +55,30 @@ public class Tower : MonoBehaviour
             }
 
             enemiesUpdated = true;
+        }
+
+        if(TowerManager.instance.selectedTower == this)
+        {
+            rangeModel.SetActive(true);
+            rangeModel.transform.localScale = new Vector3(range, 1f, range);
+        }
+    }
+
+    //เมื่อเรากด click ที่ตัววัตถุ
+    private void OnMouseDown()
+    {
+        if (LevelManager.instance.levelActive)
+        {
+            if (TowerManager.instance.selectedTower != null)
+            {
+                TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+            }
+
+            TowerManager.instance.selectedTower = this;
+
+            UIController.instance.OpenTowerUpgradePanel();
+
+            TowerManager.instance.MoveTowerSelectionEffect();
         }
     }
 }

@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 5594750713649164081}
   - component: {fileID: 5594750713649164082}
   - component: {fileID: 5600249036700882678}
+  - component: {fileID: 4484144607780144190}
   m_Layer: 8
   m_Name: Cannon Tower
   m_TagString: Untagged
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  fireRate: 1
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 64
@@ -195,6 +197,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 4090436885982473019}
   cost: 100
+  upgrader: {fileID: 0}
 --- !u!114 &5594750713649164082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +212,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5485027206382919302, guid: e32cf16d39c71464aa7f8d317b065b71, type: 3}
   firePoint: {fileID: 5594750712815525548}
-  timeBetweenShots: 1
   launcherModel: {fileID: 5594750713287996508}
   shotEffect: {fileID: 780236637666849137, guid: e491753c15d72a24d9466c1e9452911d, type: 3}
 --- !u!136 &5600249036700882678
@@ -226,6 +228,37 @@ CapsuleCollider:
   m_Height: 1.9509983
   m_Direction: 1
   m_Center: {x: -0.00047421455, y: 0.37740374, z: 0}
+--- !u!114 &4484144607780144190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5594750713649164087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb5f67c7a299d4eaa97fb2a278204d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangeUpgrade:
+  - amount: 3.5
+    cost: 50
+  - amount: 4
+    cost: 100
+  - amount: 4.5
+    cost: 150
+  currentRangeUpgrade: 0
+  hasRangeUpgrade: 1
+  firerateUpgrades:
+  - amount: 0.9
+    cost: 100
+  - amount: 0.8
+    cost: 200
+  - amount: 0.7
+    cost: 300
+  currentFireRateUpgrade: 0
+  hasFirerateUpgrade: 1
+  fireRateText: Upgrade Fire Rate
 --- !u!1001 &2278000001299009393
 PrefabInstance:
   m_ObjectHideFlags: 0

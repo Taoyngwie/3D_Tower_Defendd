@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3950853556842520235}
   - component: {fileID: 3947643199069333356}
   - component: {fileID: 3950853556842520236}
+  - component: {fileID: -3940306968647968072}
   m_Layer: 8
   m_Name: Slow Tower
   m_TagString: Untagged
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  fireRate: 0.5
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 64
@@ -178,6 +180,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 4878782603733752481}
   cost: 150
+  upgrader: {fileID: 0}
 --- !u!136 &3947643199069333356
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -191,7 +194,7 @@ CapsuleCollider:
   m_Radius: 0.7854712
   m_Height: 1.9509983
   m_Direction: 1
-  m_Center: {x: 0, y: 0.37740374, z: 1}
+  m_Center: {x: 0, y: 0.37740374, z: 0}
 --- !u!114 &3950853556842520236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +208,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectRing: {fileID: 8151064886579622516}
+--- !u!114 &-3940306968647968072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3950853556842520237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb5f67c7a299d4eaa97fb2a278204d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangeUpgrade:
+  - amount: 3.5
+    cost: 50
+  - amount: 4
+    cost: 100
+  - amount: 4.5
+    cost: 150
+  currentRangeUpgrade: 0
+  hasRangeUpgrade: 1
+  firerateUpgrades:
+  - amount: 0.45
+    cost: 100
+  - amount: 0.4
+    cost: 200
+  - amount: 0.35
+    cost: 300
+  currentFireRateUpgrade: 0
+  hasFirerateUpgrade: 1
+  fireRateText: Upgrade Slow Zone
 --- !u!1 &3950853557316260033
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class ProjectileTower : MonoBehaviour
 
     public GameObject projectile;
     public Transform firePoint;
-    public float timeBetweenShots = 1f;
+   //public float timeBetweenShots = 1f;
     private float shotCounter;
 
     private Transform target;
@@ -36,7 +36,7 @@ public class ProjectileTower : MonoBehaviour
         shotCounter -= Time.deltaTime;
         if(shotCounter <= 0 && target != null)
         {
-            shotCounter = timeBetweenShots;
+            shotCounter = theTower.fireRate;
 
             firePoint.LookAt(target);
 

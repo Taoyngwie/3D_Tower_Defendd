@@ -5357,6 +5357,7 @@ GameObject:
   - component: {fileID: 7650286294052402276}
   - component: {fileID: 7653830370431077795}
   - component: {fileID: 7650286294052402273}
+  - component: {fileID: 2317769520966394002}
   m_Layer: 8
   m_Name: Bome Tower
   m_TagString: Untagged
@@ -5394,6 +5395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  fireRate: 2.5
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 64
@@ -5402,6 +5404,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 2255155887100424302}
   cost: 200
+  upgrader: {fileID: 0}
 --- !u!136 &7653830370431077795
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5428,9 +5431,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cedfa2ec7ed0b044887b0efae7fd1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenBombs: 2.5
   theBomb: {fileID: 2979979099895890391, guid: 226355ee282e2ea4692c3dfb670c8ef6, type: 3}
   spwanPoint: {fileID: 4571636118954704776}
+--- !u!114 &2317769520966394002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650286294052402274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3eb5f67c7a299d4eaa97fb2a278204d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RangeUpgrade:
+  - amount: 3.5
+    cost: 50
+  - amount: 4
+    cost: 100
+  - amount: 4.5
+    cost: 150
+  currentRangeUpgrade: 0
+  hasRangeUpgrade: 1
+  firerateUpgrades:
+  - amount: 2
+    cost: 100
+  - amount: 1.75
+    cost: 200
+  - amount: 1.5
+    cost: 300
+  currentFireRateUpgrade: 0
+  hasFirerateUpgrade: 1
+  fireRateText: Upgrade Fire Rate
 --- !u!1 &7696408276505324314
 GameObject:
   m_ObjectHideFlags: 0

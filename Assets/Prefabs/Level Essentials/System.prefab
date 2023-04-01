@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8778455444869213810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.53, y: 0.344, z: 10.734}
+  m_LocalPosition: {x: -6.53, y: 0.143, z: 10.734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8778455445659734464}
@@ -84,6 +84,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   topSafePercent: 12
+  selectedTower: {fileID: 0}
+  selectedTowerEffect: {fileID: 0}
 --- !u!1 &8778455445659734470
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ MonoBehaviour:
   enemyToSpawn: {fileID: 7763791022301236634, guid: 0981b202c3caa4344a0a44717b320d58, type: 3}
   spwanPoint: {fileID: 8778455444869213805}
   timeBetweenSpawn: 2
-  amountToSpaw: 3
+  amountToSpaw: 100
   theCastle: {fileID: 0}
   thePath: {fileID: 0}
 --- !u!1 &8778455445779887263
@@ -177,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000248a298d214a488c743c712657ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 200
+  currentMoney: 1000
 --- !u!1 &8778455445943074049
 GameObject:
   m_ObjectHideFlags: 0

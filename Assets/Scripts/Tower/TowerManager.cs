@@ -20,6 +20,11 @@ public class TowerManager : MonoBehaviour
 
     public float topSafePercent = 15f;
 
+    [HideInInspector]
+    public Tower selectedTower;
+
+    public GameObject selectedTowerEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,5 +101,14 @@ public class TowerManager : MonoBehaviour
         location.y = 0f;
 
         return location;
+    }
+
+    public void MoveTowerSelectionEffect()
+    {
+        if(selectedTower != null)
+        {
+            selectedTowerEffect.transform.position = selectedTower.transform.position;
+            selectedTowerEffect.SetActive(true);
+        }
     }
 }

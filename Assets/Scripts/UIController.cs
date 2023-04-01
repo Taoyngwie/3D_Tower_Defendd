@@ -24,6 +24,8 @@ public class UIController : MonoBehaviour
 
     public GameObject pauseScreen;
 
+    public TowerUpgradePanel towerUpgradePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,10 @@ public class UIController : MonoBehaviour
 
     public void PauseUnpause()
     {
-        if(pauseScreen.activeSelf == false)
+
+        towerUpgradePanel.gameObject.SetActive(false);
+
+        if (pauseScreen.activeSelf == false)
         {
             pauseScreen.SetActive(true);
 
@@ -77,5 +82,22 @@ public class UIController : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(LevelManager.instance.nextLevel);
+    }
+
+    public void OpenTowerUpgradePanel()
+    {
+        towerUpgradePanel.gameObject.SetActive(true);
+        towerUpgradePanel.SetupPanel();
+    }
+
+    public void CloseTowerUpgradePanel()
+    {
+        towerUpgradePanel.gameObject.SetActive(false);
+
+        TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+        TowerManager.instance.selectedTower = null;
+
+        TowerManager.instance.selectedTowerEffect.SetActive(false);
+        notEnoughMoneyWarning.SetActive(false);
     }
 }
